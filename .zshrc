@@ -83,3 +83,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias olympus='ssh lanterns@107.180.25.1'
+alias gdbxx='gdb --batch --ex run --ex bt --ex q --args'
+alias gpom='git push origin master'
+alias gcm='git commit -m'
+alias wifilist='nmcli dev wifi list'
+alias wificonnect='nmcli dev wifi con'
+alias vup='. venv/bin/activate'
+alias vdown='deactivate'
+alias chicago='ssh kelevra@192.3.17.119'

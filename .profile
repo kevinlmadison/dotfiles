@@ -18,3 +18,4 @@ fi
 [ -f $HOME/bin/zsh ] && exec $HOME/bin/zsh -l
 # set PATH so it includes user's private bin directories
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH=$PATH:/usr/local/go/bin
