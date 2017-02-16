@@ -92,3 +92,6 @@ alias wificonnect='nmcli dev wifi con'
 alias vup='. venv/bin/activate'
 alias vdown='deactivate'
 alias chicago='ssh kelevra@192.3.17.119'
+alias uscvpn="sudo openvpn --config ~/client.ovpn --auth-retry interact"
+alias hadoopvm="ssh student@vm-hadoop-55.cse.sc.edu -p 555"
+alias fixwifi="sudo systemctl start wpa_supplicant.service"
