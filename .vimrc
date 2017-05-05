@@ -1,6 +1,15 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+"set termguicolors
+let g:gruvbox_italic=1
+let g:gruvbox_termcolors=16
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -63,13 +72,14 @@ let g:syntastic_check_on_wq = 0
         Bundle 'tpope/vim-surround'
         Bundle 'majutsushi/tagbar'
         Bundle 'octol/vim-cpp-enhanced-highlight'
+        Bundle 'morhetz/gruvbox'
         Bundle 'MarcWeber/vim-addon-mw-utils'
         Bundle 'tomtom/tlib_vim'
         Bundle 'garbas/vim-snipmate'
         Bundle 'othree/html5.vim'
-        Bundle 'chriskempson/base16-vim'
+        """Bundle 'chriskempson/base16-vim'
         Bundle 'sukima/xmledit'
-       " Bundle 'vim-scripts/simple-pairs'
+        """Bundle 'vim-scripts/simple-pairs'
         Bundle 'autoclose/autoclose'
         Bundle 'tmhedberg/SimpylFold'
 """ }}}
@@ -79,7 +89,7 @@ let g:syntastic_check_on_wq = 0
         filetype plugin indent on                   " enable ft+plugin detect
         syntax on                                   " syntax highlighting
         set t_Co=256                                " 256-colors
-        colors slate
+        colorscheme gruvbox
         """ highlight Normal ctermbg=NONE               " use terminal background
         """ hi VertSplit ctermfg=Black ctermbg=Yellow gui=NONE
         """ highlight nonText ctermbg=NONE              " use terminal background
