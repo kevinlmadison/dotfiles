@@ -3,12 +3,15 @@ filetype off                  " required
 
 "set termguicolors
 let g:gruvbox_italic=1
-let g:gruvbox_termcolors=16
+let g:gruvbox_termcolors=256
+set background=dark
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
+
+au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim

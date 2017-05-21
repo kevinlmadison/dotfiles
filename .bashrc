@@ -125,3 +125,5 @@ export EDITOR="$VISUAL"
 
 # added by Anaconda3 4.3.1 installer
 export PATH="/home/kelevra/anaconda3/bin:$PATH"
+
+export QSYS_ROOTDIR="/home/kelevra/altera_lite/16.0/quartus/quartus/sopc_builder/bin"

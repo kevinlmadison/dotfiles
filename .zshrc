@@ -3,6 +3,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/kelevra/.oh-my-zsh
 export GOPATH=$HOME/repos/go
+export SCRANKINGS_DB_USER=kelevra
+export SCRANKINGS_DB_PASSWORD=gr8prawn366
+export SCRANKINGS_DB_NAME=smash_rankings
+export PATH=/home/kelevra/fuchsia/.jiri_root/bin:$PATH
 #Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -78,3 +82,5 @@ alias ignite="ssh -p 803 -i ~/Downloads/cloud kevin@carolinaignites.org"
 alias hack="traceroute"
 alias android="cd /opt/android-studio/bin && ./studio.sh"
 alias atlantis='ssh kelevra@162.243.95.220'
+alias smashdb='sudo -u kelevra psql -d smash_rankings'
+
