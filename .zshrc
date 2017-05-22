@@ -7,6 +7,7 @@ export SCRANKINGS_DB_USER=kelevra
 export SCRANKINGS_DB_PASSWORD=gr8prawn366
 export SCRANKINGS_DB_NAME=smash_rankings
 export PATH=/home/kelevra/fuchsia/.jiri_root/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
 #Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -84,3 +85,4 @@ alias android="cd /opt/android-studio/bin && ./studio.sh"
 alias atlantis='ssh kelevra@162.243.95.220'
 alias smashdb='sudo -u kelevra psql -d smash_rankings'
 
+alias memhog='du -a /home | sort -n -r | head -n 5'
