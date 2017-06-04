@@ -3,9 +3,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/kelevra/.oh-my-zsh
 export GOPATH=$HOME/repos/go
-export SCRANKINGS_DB_USER=kelevra
-export SCRANKINGS_DB_PASSWORD=gr8prawn366
-export SCRANKINGS_DB_NAME=smash_rankings
 export PATH=/home/kelevra/fuchsia/.jiri_root/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 #Set name of the theme to load. Optionally, if you set this to "random"
@@ -67,7 +64,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias olympus='ssh lanterns@107.180.25.1'
 alias gdbxx='gdb --batch --ex run --ex bt --ex q --args'
 alias gpom='git push origin master'
 alias gcm='git commit -m'
@@ -77,11 +73,9 @@ alias vup='. venv/bin/activate'
 alias vdown='deactivate'
 alias chicago='ssh kelevra@192.3.17.119'
 alias uscvpn="sudo openvpn --config ~/client.ovpn --auth-retry interact"
-alias hadoopvm="ssh student@vm-hadoop-55.cse.sc.edu -p 555"
 alias fixwifi="sudo systemctl start wpa_supplicant.service"
 alias ignite="ssh -p 803 -i ~/Downloads/cloud kevin@carolinaignites.org"
 alias hack="traceroute"
-alias android="cd /opt/android-studio/bin && ./studio.sh"
 alias atlantis='ssh kelevra@162.243.95.220'
 alias smashdb='sudo -u kelevra psql -d smash_rankings'
 
