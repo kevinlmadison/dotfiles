@@ -21,7 +21,7 @@ ZSH_THEME="agnoster"
 #Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 #Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# DISABLE_AUTO_TITLE="true"keyj
 #Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 #Uncomment the following line to display red dots whilst waiting for completion.
@@ -80,3 +80,8 @@ alias atlantis='ssh kelevra@162.243.95.220'
 alias smashdb='sudo -u kelevra psql -d smash_rankings'
 
 alias memhog='du -a /home | sort -n -r | head -n 5'
+alias imaps='ssh -i cloud.key imaps@35.185.49.208'
+alias zed='cu -l /dev/ttyACM0 -s 115200'
+alias cores='nproc --all'
+alias drjava='java -jar drjava-beta-20160913-225446.jar'
+alias usclinux='ssh madisonk@129.252.130.175 -p 222'

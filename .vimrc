@@ -129,7 +129,8 @@ let g:syntastic_check_on_wq = 0
     set history=40                                  " default 20
     set iskeyword+=_,$,@,%,#                        " not word dividers
     set laststatus=2                                " always show statusline
-    set listchars=tab:>\                            " > to highlight <tab>>
+    """set listchars=tab:>\                            " > to highlight <tab>>
+    set listchars+=tab:>-
     set list                                        " displaying listchars
     set mouse=a                                     " mouse in all modes
     set ttymouse=xterm2
