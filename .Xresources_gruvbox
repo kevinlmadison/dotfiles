@@ -143,6 +143,7 @@ Xft.rgba: rgb
 *color15: #3c3836
 */
 
+
 !Generalized Gruvbox Colors
 
 URxvt.color24:  #076678
@@ -192,3 +193,6 @@ URxvt*imLocale:            en_US.UTF-8
 URxvt.url-launcher:        /usr/bin/firefox
 !URxvt.keysym.M-Delete:     perl:matcher:list
 URxvt.colorUL:             #7780a1
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+

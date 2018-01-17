@@ -10,6 +10,13 @@ let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
+let g:haskell_enable_quantification = 1
+let g:haskell_enable_recursivedo = 1
+let g:haskell_enable_arrowsyntax = 1
+let g:haskell_enable_pattern_synonyms = 1
+let g:haskell_enable_typeroles = 1
+let g:haskell_enable_static_pointers = 1
+let g:haskell_backpack = 1
 
 au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
 
@@ -75,7 +82,9 @@ let g:syntastic_check_on_wq = 0
         Bundle 'tpope/vim-surround'
         Bundle 'majutsushi/tagbar'
         Bundle 'octol/vim-cpp-enhanced-highlight'
-        Bundle 'morhetz/gruvbox'
+        """Bundle 'morhetz/gruvbox'
+        Bundle 'dkasak/gruvbox'
+        Bundle 'arcticicestudio/nord-vim'
         Bundle 'MarcWeber/vim-addon-mw-utils'
         Bundle 'tomtom/tlib_vim'
         Bundle 'garbas/vim-snipmate'
@@ -131,9 +140,13 @@ let g:syntastic_check_on_wq = 0
     set laststatus=2                                " always show statusline
     """set listchars=tab:>\                            " > to highlight <tab>>
     set listchars+=tab:>-
+    set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+
     set list                                        " displaying listchars
     set mouse=a                                     " mouse in all modes
-    set ttymouse=xterm2
+    if !has('nvim')
+        set ttymouse=xterm2
+    endif
     set nocompatible                                " don't vi-compatible
     set noexrc                                      " don't use other .*rc(s)
     set nostartofline                               " no goto #1 char in line

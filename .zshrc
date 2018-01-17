@@ -85,3 +85,6 @@ alias zed='cu -l /dev/ttyACM0 -s 115200'
 alias cores='nproc --all'
 alias drjava='java -jar drjava-beta-20160913-225446.jar'
 alias usclinux='ssh -Y madisonk@129.252.130.175 -p 222'
+alias nord='xrdb .Xresources_nord'
+alias gruvbox='xrdb .Xresources_gruvbox'
+alias vim="nvim"
