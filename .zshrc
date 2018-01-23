@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
+
+export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 export ZSH=/home/kelevra/.oh-my-zsh
 export GOPATH=$HOME/repos/go
 export PATH=/home/kelevra/fuchsia/.jiri_root/bin:$PATH
@@ -88,3 +90,5 @@ alias usclinux='ssh -Y madisonk@129.252.130.175 -p 222'
 alias nord='xrdb .Xresources_nord'
 alias gruvbox='xrdb .Xresources_gruvbox'
 alias vim="nvim"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

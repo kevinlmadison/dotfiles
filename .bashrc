@@ -127,3 +127,5 @@ export EDITOR="$VISUAL"
 export PATH="/home/kelevra/anaconda3/bin:$PATH"
 
 export QSYS_ROOTDIR="/home/kelevra/altera_lite/16.0/quartus/quartus/sopc_builder/bin"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

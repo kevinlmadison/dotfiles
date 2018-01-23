@@ -5,11 +5,13 @@ filetype off                  " required
 let g:gruvbox_italic=1
 let g:gruvbox_termcolors=256
 set background=dark
+" Golang syntax
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
+" Haskell Syntax
 let g:haskell_enable_quantification = 1
 let g:haskell_enable_recursivedo = 1
 let g:haskell_enable_arrowsyntax = 1
@@ -17,50 +19,39 @@ let g:haskell_enable_pattern_synonyms = 1
 let g:haskell_enable_typeroles = 1
 let g:haskell_enable_static_pointers = 1
 let g:haskell_backpack = 1
-
+" ARM Assembly Syntax
 au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin()
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'gmarik/vundle'
+Plug 'ervandew/supertab'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'soramugi/auto-ctags.vim'
+Plug 'bling/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'majutsushi/tagbar'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'dkasak/gruvbox'                                 "This was so we could use Haskell syntax highlighting but the original was at 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'othree/html5.vim'
+Plug 'sukima/xmledit'
+Plug 'sukima/xmledit'
+Plug 'tmhedberg/SimpylFold'
+Plug 'tpope/vim-fugitive'
+Plug 'git://git.wincent.com/command-t.git'
+Plug 'rstacruz/sparkup', {'rtp':'vim/'}
+Plug 'ascenator/L9', {'name': 'newL9'}
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-Plugin 'ascenator/L9', {'name': 'newL9'}
+call plug#end()
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line:
-execute pathogen#infect()
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -69,32 +60,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-""" Vundle plugin manager {{{
-    filetype off                                    " required to init 
-    set rtp+=~/.vim/bundle/vundle/                  " include vundle
-    call vundle#rc()                                " init vundle
-    """ github repos {{{
-        Bundle 'gmarik/vundle'
-        Bundle 'ervandew/supertab'
-        """Bundle 'Valloric/YouCompleteMe'
-        Bundle 'bling/vim-airline'
-        Bundle 'scrooloose/nerdtree'
-        Bundle 'tpope/vim-surround'
-        Bundle 'majutsushi/tagbar'
-        Bundle 'octol/vim-cpp-enhanced-highlight'
-        """Bundle 'morhetz/gruvbox'
-        Bundle 'dkasak/gruvbox'
-        Bundle 'arcticicestudio/nord-vim'
-        Bundle 'MarcWeber/vim-addon-mw-utils'
-        Bundle 'tomtom/tlib_vim'
-        Bundle 'garbas/vim-snipmate'
-        Bundle 'othree/html5.vim'
-        """Bundle 'chriskempson/base16-vim'
-        Bundle 'sukima/xmledit'
-        """Bundle 'vim-scripts/simple-pairs'
-        Bundle 'autoclose/autoclose'
-        Bundle 'tmhedberg/SimpylFold'
-""" }}}
+
+let g:auto_ctags = 1
+let g:auto_ctags_directory_list = ['.git']
+
 """ User interface {{{
     """ Syntax highlighting {{{
         filetype plugin on
@@ -218,6 +187,10 @@ let g:syntastic_check_on_wq = 0
     " Open the plugin NERDTree
     noremap <F2> :NERDTreeToggle<CR>
 
+    nmap <Leader>t :Tags<CR>
+    nmap <Leader>b :Buffers<CR>
+    nnoremap <c-p> :Files<CR>
+
     " Toggle buffer selection/tag lists
     map <F3> <ESC>:TagbarToggle<CR>
 
@@ -253,7 +226,7 @@ let g:syntastic_check_on_wq = 0
     """ Pasting {{{
         "set paste
         nnoremap p ]p
-        nnoremap <C-p> p
+        """nnoremap <C-p> p
 "" }}}
 
         let TList_Ctags_cmd = 'ctags'
