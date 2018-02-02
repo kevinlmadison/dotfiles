@@ -66,6 +66,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ls='exa'
 alias gdbxx='gdb --batch --ex run --ex bt --ex q --args'
 alias gpom='git push origin master'
 alias gcm='git commit -m'

@@ -151,6 +151,8 @@ mode "resize" {
 }
 exec --no-startup-id feh --bg-fill ~/Pictures/backgrounds/wallpaper.jpg
 exec --no-startup-id nm-applet
+exec --no-startup-id xrdb ~/.Xresources_gruvbox
+exec --no-startup-id xmodmap ~/.Xmodmap
 bindsym $mod+r mode "resize"
 
 set $bg-color              #2f343f
