@@ -1,5 +1,5 @@
 !URxvt*font: xft:Terminess Powerline:size=12
-URxvt*font:            xft:bitstream vera sans mono:pixelsize=13,xft:Inconsolata for Powerline:size=12
+URxvt*font:            xft:bitstream vera sans mono:pixelsize=11,xft:Inconsolata for Powerline:size=11
 !*boldFont:            xft:Mono:pixelsize=11
 !*italicFont:          xft:Mono:pixelsize=11:italic
 !*boldItalicFont:      xft:Mono:pixelsize=11:bold:italic
