@@ -4,7 +4,7 @@ filetype off                  " required
 "set termguicolors
 let g:gruvbox_italic=1
 let g:gruvbox_termcolors=256
-set background=dark
+set background=light
 " Golang syntax
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
@@ -24,6 +24,7 @@ au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
 
 call plug#begin()
 
+Plug 'powerline/powerline-fonts'
 Plug 'rust-lang/rust.vim'
 Plug 'gmarik/vundle'
 Plug 'ervandew/supertab'
