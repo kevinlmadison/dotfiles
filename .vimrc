@@ -5,6 +5,8 @@ filetype off                  " required
 let g:gruvbox_italic=1
 let g:gruvbox_termcolors=256
 set background=light
+let g:gruvbox_contrast_light="hard"
+let g:gruvbox_contrast_dark="hard"
 " Golang syntax
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
@@ -21,6 +23,8 @@ let g:haskell_enable_static_pointers = 1
 let g:haskell_backpack = 1
 " ARM Assembly Syntax
 au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
+" Use Powerline fonts for Airline Plugin "
+let g:airline_powerline_fonts = 1
 
 call plug#begin()
 
@@ -31,7 +35,8 @@ Plug 'ervandew/supertab'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'soramugi/auto-ctags.vim'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
