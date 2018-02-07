@@ -78,7 +78,7 @@ Xft.rgba: rgb
 *.color7:       #f8f8f2
 *.color15:      #f9f8f5
 */
-
+/*
 !!Gruvbox Dark Theme starts Here!!!!
 
 ! hard contrast: *background: #1d2021
@@ -109,7 +109,7 @@ Xft.rgba: rgb
 ! LightGrey + White
 *color7:  #a89984
 *color15: #ebdbb2
-/*
+*/
 
 !Gruvbox Light Theme starts here!!!
 
@@ -141,7 +141,7 @@ Xft.rgba: rgb
 ! LightGrey + White
 *color7:  #7c6f64
 *color15: #3c3836
-*/
+
 
 
 !Generalized Gruvbox Colors
