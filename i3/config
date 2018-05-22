@@ -8,6 +8,11 @@
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
+## Gaps
+#gaps inner 10
+#gaps outer 10
+#smart_gaps on
+#smart_borders on
 
 set $mod Mod1
 

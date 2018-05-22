@@ -42,6 +42,7 @@ Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'dkasak/gruvbox'                                 "This was so we could use Haskell syntax highlighting but the original was at 'morhetz/gruvbox'
+"""Plug 'webdesus/polymer-ide.vim', { 'do': 'npm install' }
 Plug 'arcticicestudio/nord-vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'

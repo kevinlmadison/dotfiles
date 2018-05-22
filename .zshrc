@@ -2,6 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 
+export PATH="/home/kelevra/anaconda3/bin:$PATH"
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 export ZSH=/home/kelevra/.oh-my-zsh
 export GOPATH=$HOME/repos/go
@@ -44,6 +45,7 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
+set -o vi
 #User configuration
 #export MANPATH="/usr/local/man:$MANPATH"
 #You may need to manually set your language environment
@@ -91,5 +93,7 @@ alias nord='xrdb .Xresources_nord'
 alias gruvbox='xrdb .Xresources_gruvbox'
 alias vim="nvim"
 alias ls="exa"
+alias pip="pip3"
+alias cleardocker="docker rm \$(docker ps -a -q -f status=exited)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
