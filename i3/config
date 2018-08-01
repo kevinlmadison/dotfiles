@@ -32,6 +32,7 @@ floating_modifier $mod
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec urxvt
+#bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -45,10 +46,10 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -69,7 +70,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+c split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -126,6 +127,9 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # toggle off the touchpad
 bindsym $mod+t exec ./.scripts/touchpad_toggle.sh
+# lock the screen with system-lock script
+bindsym $mod+Shift+x exec system-lock
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -153,6 +157,7 @@ exec --no-startup-id feh --bg-fill ~/Pictures/backgrounds/wallpaper.jpg
 exec --no-startup-id nm-applet
 exec --no-startup-id xrdb ~/.Xresources_gruvbox
 exec --no-startup-id xmodmap ~/.Xmodmap
+exec --no-startup-id desktop-spooler
 bindsym $mod+r mode "resize"
 
 set $bg-color              #2f343f

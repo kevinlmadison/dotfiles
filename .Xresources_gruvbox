@@ -1,10 +1,10 @@
 !URxvt*font: xft:Terminess Powerline:size=12
-URxvt*font:            xft:bitstream vera sans mono:pixelsize=11,xft:Terminess Powerline:size=11
+!URxvt*font:            xft:bitstream vera sans mono:pixelsize=11,xft:Terminess Powerline:size=11
+URxvt*font:            xft:Gohu GohuFont:pixelsize=14:style=Regular,xft:Terminess Powerline:size=10
+!*letterSpace:         -1
 !*boldFont:            xft:Mono:pixelsize=11
 !*italicFont:          xft:Mono:pixelsize=11:italic
 !*boldItalicFont:      xft:Mono:pixelsize=11:bold:italic
-*letterSpace:         -1
-
 
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
@@ -79,7 +79,6 @@ Xft.rgba: rgb
 *.color15:      #f9f8f5
 */
 
-/*
 !!Gruvbox Dark Theme starts Here!!!!
 
 ! hard contrast: *background: #1d2021
@@ -110,8 +109,8 @@ Xft.rgba: rgb
 ! LightGrey + White
 *color7:  #a89984
 *color15: #ebdbb2
-*/
 
+/*
 !Gruvbox Light Theme starts here!!!
 
 ! hard contrast: *background: #f9f5d7
@@ -142,6 +141,7 @@ Xft.rgba: rgb
 ! LightGrey + White
 *color7:  #7c6f64
 *color15: #3c3836
+*/
 
 
 !Generalized Gruvbox Colors

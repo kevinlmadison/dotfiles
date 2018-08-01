@@ -1,12 +1,17 @@
 set nocompatible              " be iMproved, required
+set inccommand=nosplit
 filetype off                  " required
+
+let @b = "^wd$"
+let @c = "^yiwitestWrapper('A', (err) => expect(err.errors.pa).to.exist);"
+let @d = "$bbinot."
 
 "set termguicolors
 let g:gruvbox_italic=1
 let g:gruvbox_termcolors=256
-set background=light
+set background=dark
 let g:gruvbox_contrast_light="hard"
-let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_contrast_dark="soft"
 " Golang syntax
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
@@ -23,6 +28,7 @@ let g:haskell_enable_static_pointers = 1
 let g:haskell_backpack = 1
 " ARM Assembly Syntax
 au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
+au BufNewFile,BufRead Jenkinsfile setf groovy " Jenkins uses Groovy syntax
 " Use Powerline fonts for Airline Plugin "
 let g:airline_powerline_fonts = 1
 
@@ -139,7 +145,8 @@ let g:auto_ctags_directory_list = ['.git']
     """ Folding {{{
         set foldcolumn=0                            " 1 width folding column
         set foldmethod=indent                       " folds using indent
-        set foldnestmax=10                          " max 10 nested folds
+        autocmd BufWinEnter * silent!:%foldopen!
+        set foldnestmax=3                          " max 10 nested folds
         set nofoldenable                            " all folds open default
     """ }}}
     """ Search and replace {{{

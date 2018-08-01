@@ -1,12 +1,18 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
+source /etc/profile.d/quartus.sh
+source /opt/Xilinx/Vivado/2018.2/settings64.sh
 
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 export ZSH=/home/kelevra/.oh-my-zsh
 export GOPATH=$HOME/repos/go
 export PATH=/home/kelevra/fuchsia/.jiri_root/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/kelevra/bin
+export PATH=$PATH:/opt/altera/18.0/nios2eds/sdk2/bin
+export QUARTUS_ROOTDIR=$PATH:/opt/altera/18.0/quartus
+export SOPC_KIT_NIOS2=$PATH:/opt/altera/18.0/nios2eds
 #Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -44,6 +50,10 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
+set -o vi
+if [ $commands[kubectl] ]; then
+    source <(kubectl completion zsh)
+fi
 #User configuration
 #export MANPATH="/usr/local/man:$MANPATH"
 #You may need to manually set your language environment
@@ -87,9 +97,18 @@ alias imaps='ssh -i cloud.key imaps@35.185.49.208'
 alias zed='cu -l /dev/ttyACM0 -s 115200'
 alias cores='nproc --all'
 alias drjava='java -jar drjava-beta-20160913-225446.jar'
-alias usclinux='ssh -Y madisonk@129.252.130.175 -p 222'
+alias usclinux='ssh -Y madisonk@129.252.130.101 -p 222'
 alias nord='xrdb .Xresources_nord'
 alias gruvbox='xrdb .Xresources_gruvbox'
 alias vim="nvim"
+alias k="kubectl"
+alias av='cd ~/repos/cadet/avtec-stack'
+alias colemak='setxkbmap -v us -variant colemak'
+alias qw='setxkbmap -v us -layout querty'
+alias ezsh='vim ~/.zshrc'
+alias szsh='source ~/.zshrc'
+alias grep='rg'
+alias quartus64='quartus --64bit'
+alias c='cd'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
