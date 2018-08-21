@@ -1,6 +1,7 @@
 !URxvt*font: xft:Terminess Powerline:size=12
 !URxvt*font:            xft:bitstream vera sans mono:pixelsize=11,xft:Terminess Powerline:size=11
-URxvt*font:            xft:Gohu GohuFont:pixelsize=14:style=Regular,xft:Terminess Powerline:size=10
+!URxvt*font:            xft:Gohu GohuFont:pixelsize=14:style=Regular,xft:misc gohup:pixelsize=11:style=Regular
+URxvt*font:            xft:Gohu GohuFont:pixelsize=14:style=Regular,xft:Terminess Powerline:size=10,xft:misc gohup:style=Regular
 !*letterSpace:         -1
 !*boldFont:            xft:Mono:pixelsize=11
 !*italicFont:          xft:Mono:pixelsize=11:italic

@@ -31,16 +31,21 @@ au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
 au BufNewFile,BufRead Jenkinsfile setf groovy " Jenkins uses Groovy syntax
 " Use Powerline fonts for Airline Plugin "
 let g:airline_powerline_fonts = 1
+" YouCompleteMe Autocomplete settings
+let g:ycm_min_num_of_chars_for_completion = 4
+let g:ycm_min_num_identifier_candidate_chars = 4
+let g:ycm_enable_diagnostic_highlighting = 0
 
 call plug#begin()
 
 Plug 'powerline/powerline-fonts'
 Plug 'rust-lang/rust.vim'
 Plug 'gmarik/vundle'
-Plug 'ervandew/supertab'
+"Plug 'ervandew/supertab'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --clang-completer --rust-completer --js-completer'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'soramugi/auto-ctags.vim'
+"Plug 'soramugi/auto-ctags.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
@@ -53,7 +58,6 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'othree/html5.vim'
-Plug 'sukima/xmledit'
 Plug 'sukima/xmledit'
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-fugitive'
@@ -219,7 +223,7 @@ let g:auto_ctags_directory_list = ['.git']
 
     " Yank(copy) to system clipboard
     noremap <leader>y "+y
-    noremap <leader>cs :source ~/.vimrc<CR>
+    noremap <leader>p "+p
 
     " Commenting with # or remove for multiple languages
     vnoremap <leader>; :s/^/#/<CR>:noh<CR>

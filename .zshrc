@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
+#. ~/repos/dotfiles/z.sh
+# source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+source ~/repos/dotfiles/.abbr_pwd
 source /etc/profile.d/quartus.sh
 source /opt/Xilinx/Vivado/2018.2/settings64.sh
 
@@ -13,9 +16,17 @@ export PATH=$PATH:/home/kelevra/bin
 export PATH=$PATH:/opt/altera/18.0/nios2eds/sdk2/bin
 export QUARTUS_ROOTDIR=$PATH:/opt/altera/18.0/quartus
 export SOPC_KIT_NIOS2=$PATH:/opt/altera/18.0/nios2eds
+export MONGO_DATABASE_USER='piketest'
+export MONGO_DATABASE_PASS='hurraypike1'
+export MONGO_DATABASE_IP_ADDRESS='ds263791.mlab.com'
+export MONGO_DATABASE_PORT='63791'
+export MONGO_DATABASE_NAME='pike-test'
+export AUTH_TEST='TRUE'
 #Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#export POWERLEVEL9K_MODE='nerdfont-complete'
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 ZSH_THEME="agnoster"
 #Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -48,22 +59,28 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    z
+    rust
+    vi-mode
+)
 source $ZSH/oh-my-zsh.sh
-set -o vi
 if [ $commands[kubectl] ]; then
     source <(kubectl completion zsh)
 fi
+
 #User configuration
 #export MANPATH="/usr/local/man:$MANPATH"
 #You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 #Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='nvim'
+ fi
+
 #Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 #ssh
@@ -97,7 +114,7 @@ alias imaps='ssh -i cloud.key imaps@35.185.49.208'
 alias zed='cu -l /dev/ttyACM0 -s 115200'
 alias cores='nproc --all'
 alias drjava='java -jar drjava-beta-20160913-225446.jar'
-alias usclinux='ssh -Y madisonk@129.252.130.101 -p 222'
+alias usclinux='ssh -Y madisonk@129.252.130.176 -p 222'
 alias nord='xrdb .Xresources_nord'
 alias gruvbox='xrdb .Xresources_gruvbox'
 alias vim="nvim"
@@ -110,5 +127,12 @@ alias szsh='source ~/.zshrc'
 alias grep='rg'
 alias quartus64='quartus --64bit'
 alias c='cd'
+alias v='vim'
+alias grav='ssh -Y micron@graviton.cse.sc.edu'
+alias openports='netstat -tupan'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
