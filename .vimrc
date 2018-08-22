@@ -1,15 +1,14 @@
 set nocompatible              " be iMproved, required
 set inccommand=nosplit
-filetype off                  " required
 
-let @b = "^wd$"
-let @c = "^yiwitestWrapper('A', (err) => expect(err.errors.pa).to.exist);"
-let @d = "$bbinot."
+filetype off                  " required
 
 "set termguicolors
 let g:gruvbox_italic=1
 let g:gruvbox_termcolors=256
 set background=dark
+set cursorline
+set showtabline=1
 let g:gruvbox_contrast_light="hard"
 let g:gruvbox_contrast_dark="soft"
 " Golang syntax
@@ -19,13 +18,13 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 " Haskell Syntax
-let g:haskell_enable_quantification = 1
-let g:haskell_enable_recursivedo = 1
-let g:haskell_enable_arrowsyntax = 1
-let g:haskell_enable_pattern_synonyms = 1
-let g:haskell_enable_typeroles = 1
-let g:haskell_enable_static_pointers = 1
-let g:haskell_backpack = 1
+"let g:haskell_enable_quantification = 1
+"let g:haskell_enable_recursivedo = 1
+"let g:haskell_enable_arrowsyntax = 1
+"let g:haskell_enable_pattern_synonyms = 1
+"let g:haskell_enable_typeroles = 1
+"let g:haskell_enable_static_pointers = 1
+"let g:haskell_backpack = 1
 " ARM Assembly Syntax
 au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
 au BufNewFile,BufRead Jenkinsfile setf groovy " Jenkins uses Groovy syntax
@@ -52,8 +51,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'dkasak/gruvbox'                                 "This was so we could use Haskell syntax highlighting but the original was at 'morhetz/gruvbox'
-Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
+"Plug 'dkasak/gruvbox'                                 "This was so we could use Haskell syntax highlighting but the original was at 'morhetz/gruvbox'
+"Plug 'arcticicestudio/nord-vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
@@ -248,24 +248,24 @@ let g:auto_ctags_directory_list = ['.git']
 
         let TList_Ctags_cmd = 'ctags'
     """ GVIM COLORS
-        hi SpecialKey guifg=Blue
-        hi MoreMsg guifg=Green
-        hi Visual guifg=NONE guibg=NONE
-        hi Folded ctermbg=4 guibg=Blue
-        hi FoldColumn ctermbg=7
-        hi DiffAdd guibg=Blue
-        hi DiffChange guibg=Magenta
-        hi DiffDelete guibg=Cyan
-        hi Normal guifg=Gray guibg=Black
-        hi Cursor guibg=White
-        hi lCursor guibg=White
-        hi Comment guifg=Cyan
-        hi Constant guifg=Magenta
-        hi Special guifg=Red
-        hi Identifier guifg=Cyan
-        hi Statement guifg=Yellow
-        hi PreProc guifg=Blue
-        hi Type guifg=Green
-        hi Underlined guifg=Blue
-        hi Todo guifg=Black
-        hi Directory ctermfg=Red
+    "    hi SpecialKey guifg=Blue
+    "    hi MoreMsg guifg=Green
+    "    hi Visual guifg=NONE guibg=NONE
+    "    hi Folded ctermbg=4 guibg=Blue
+    "    hi FoldColumn ctermbg=7
+    "    hi DiffAdd guibg=Blue
+    "    hi DiffChange guibg=Magenta
+    "    hi DiffDelete guibg=Cyan
+    "    hi Normal guifg=Gray guibg=Black
+    "    hi Cursor guibg=White
+    "    hi lCursor guibg=White
+    "    hi Comment guifg=Cyan
+    "    hi Constant guifg=Magenta
+    "    hi Special guifg=Red
+    "    hi Identifier guifg=Cyan
+    "    hi Statement guifg=Yellow
+    "    hi PreProc guifg=Blue
+    "    hi Type guifg=Green
+    "    hi Underlined guifg=Blue
+    "    hi Todo guifg=Black
+    "    hi Directory ctermfg=Red

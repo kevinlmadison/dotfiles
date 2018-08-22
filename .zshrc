@@ -6,6 +6,7 @@
 source ~/repos/dotfiles/.abbr_pwd
 source /etc/profile.d/quartus.sh
 source /opt/Xilinx/Vivado/2018.2/settings64.sh
+#source ~/.vim/plugged/gruvbox/gruvbox_256palette.sh
 
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 export ZSH=/home/kelevra/.oh-my-zsh
