@@ -131,6 +131,7 @@ alias c='cd'
 alias v='vim'
 alias grav='ssh -Y micron@graviton.cse.sc.edu'
 alias openports='netstat -tupan'
+alias findparents="ps -ely | awk 'NR==1||/docker/'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

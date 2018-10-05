@@ -9,8 +9,11 @@ let g:gruvbox_termcolors=256
 set background=dark
 set cursorline
 set showtabline=1
-let g:gruvbox_contrast_light="hard"
+let g:gruvbox_contrast_light="soft"
 let g:gruvbox_contrast_dark="soft"
+" Python Syntax
+let g:python_highlight_all = 1
+let g:python_version_2 = 0
 " Golang syntax
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
@@ -18,25 +21,48 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 " Haskell Syntax
-"let g:haskell_enable_quantification = 1
-"let g:haskell_enable_recursivedo = 1
-"let g:haskell_enable_arrowsyntax = 1
-"let g:haskell_enable_pattern_synonyms = 1
-"let g:haskell_enable_typeroles = 1
-"let g:haskell_enable_static_pointers = 1
-"let g:haskell_backpack = 1
+let g:haskell_enable_quantification = 1
+let g:haskell_enable_recursivedo = 1
+let g:haskell_enable_arrowsyntax = 1
+let g:haskell_enable_pattern_synonyms = 1
+let g:haskell_enable_typeroles = 1
+let g:haskell_enable_static_pointers = 1
+let g:haskell_backpack = 1
+let g:haskell_classic_highlighting = 1
 " ARM Assembly Syntax
 au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
 au BufNewFile,BufRead Jenkinsfile setf groovy " Jenkins uses Groovy syntax
 " Use Powerline fonts for Airline Plugin "
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts = 1
+let g:airline_skip_empty_sections = 1
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_symbols.linenr = 'Ξ'
+let g:airline_theme='gruvbox'
 " YouCompleteMe Autocomplete settings
 let g:ycm_min_num_of_chars_for_completion = 4
 let g:ycm_min_num_identifier_candidate_chars = 4
 let g:ycm_enable_diagnostic_highlighting = 0
+" Nord theme stuff
+let g:nord_cursor_line_number_background = 1
 
 call plug#begin()
 
+"Plug 'vim-syntastic/syntastic'
+"Plug 'isRuslan/vim-es6'
+Plug 'vim-python/python-syntax'
+Plug 'easymotion/vim-easymotion'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'w0rp/ale'
+Plug 'pangloss/vim-javascript'
+Plug 'airblade/vim-gitgutter'
+Plug 'mattn/emmet-vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'kevinlmadison/auto-pairs', {'branch': 'master'}
 Plug 'powerline/powerline-fonts'
 Plug 'rust-lang/rust.vim'
 Plug 'gmarik/vundle'
@@ -51,12 +77,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'morhetz/gruvbox'
-"Plug 'dkasak/gruvbox'                                 "This was so we could use Haskell syntax highlighting but the original was at 'morhetz/gruvbox'
-"Plug 'arcticicestudio/nord-vim'
+"Plug 'morhetz/gruvbox'
+Plug 'dkasak/gruvbox'           "Haskell syntax highlighting
+Plug 'arcticicestudio/nord-vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
+Plug 'Yggdroot/indentline'
 Plug 'othree/html5.vim'
 Plug 'sukima/xmledit'
 Plug 'tmhedberg/SimpylFold'
@@ -72,13 +98,15 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"""let g:syntastic_always_populate_loc_list = 1
+"""let g:syntastic_auto_loc_list = 1
+"""let g:syntastic_check_on_open = 1
+"""let g:syntastic_check_on_wq = 0
+"""let g:syntastic_javascript_checkers=['eslint', 'babel-eslint']
 
 let g:auto_ctags = 1
 let g:auto_ctags_directory_list = ['.git']
+
 
 """ User interface {{{
     """ Syntax highlighting {{{
@@ -102,7 +130,7 @@ let g:auto_ctags_directory_list = ['.git']
         set encoding=utf-8                          " For Powerline glyphs
         set more                                    " ---more--- like less
         set noshowmode                              " hide mode in cmd-line
-        set number                                  " line numbers
+        set number relativenumber                                 " line numbers
         set showcmd                                 " show cmds being typed
         set title                                   " window title
         set visualbell                              " visual instead of beep
@@ -111,8 +139,8 @@ let g:auto_ctags_directory_list = ['.git']
                        \.avi,.mkv,.so
         set wildmenu                                " better cmd-completion
         set wildmode=list:longest                   " wildmode huge list
-         
-        
+
+
         """ Powerline {{{
             let g:Powerline_symbols = 'fancy'       " enable PL-glyphs
         """ }}}
@@ -124,10 +152,15 @@ let g:auto_ctags_directory_list = ['.git']
     set iskeyword+=_,$,@,%,#                        " not word dividers
     set laststatus=2                                " always show statusline
     """set listchars=tab:>\                            " > to highlight <tab>>
-    set listchars+=tab:>-
-    set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
-
     set list                                        " displaying listchars
+    set listchars=
+    ""set listchars+=tab:→
+    set listchars+=tab:>-
+    set listchars+=precedes:⟨
+    set listchars+=extends:⟩
+    set listchars+=trail:¬
+    "set listchars=tab:→\ ,eol:¬,nbsp:␣,trail:¬,extends:⟩,precedes:⟨
+
     set mouse=a                                     " mouse in all modes
     if !has('nvim')
         set ttymouse=xterm2
@@ -143,7 +176,7 @@ let g:auto_ctags_directory_list = ['.git']
     """ Wordwrap {{{
         set wrap
         set linebreak
-        set nolist "list dables linebreak
+        """set nolist "list dables linebreak
         set textwidth=0
         set wrapmargin=0
     """ Folding {{{
@@ -179,7 +212,7 @@ let g:auto_ctags_directory_list = ['.git']
 """ Text formatting {{{
     set autoindent                                  " preserve indentation
     set backspace=indent,eol,start                  " smart backspace
-    set expandtab                                   " no real tabs
+    set expandtab                                 " no real tabs
     set shiftround                                  " be clever with tabs
     set shiftwidth=4                                " default 8
     set smartcase                                   " igncase,except w/capitals
@@ -210,26 +243,34 @@ let g:auto_ctags_directory_list = ['.git']
 
     " Toggle buffer selection/tag lists
     map <F3> <ESC>:TagbarToggle<CR>
+    nmap <leader>T :enew<cr>
+    nmap <leader>l :bnext<cr>
+    nmap <leader>h :bprevious<cr>
 
     " Snipmate remapping
-    imap <tab> <C-r>=TriggerSnippet()<CR>
+    "imap <tab> <C-r>=TriggerSnippet()<CR>
 
     " Quickly edit/source .vimrc
     noremap <leader>ce :edit ~/.vimrc<CR>
     noremap <leader>cs :source ~/.vimrc<CR>
 
     " Toggle text wrapping
-    nmap <silent> <leader>w :set invwrap<CR>:set wrap?<CR> 
+    "nmap <silent> <leader>w :set invwrap<CR>:set wrap?<CR> 
+    " Wrapping macros
+    nmap <leader>w ysiw
+    nmap <leader>cw cs
+    nmap <leader>dw ds
 
     " Yank(copy) to system clipboard
     noremap <leader>y "+y
     noremap <leader>p "+p
+    noremap <leader>n :noh<CR>
 
     " Commenting with # or remove for multiple languages
     vnoremap <leader>; :s/^/#/<CR>:noh<CR>
     vnoremap <leader>: :s/^\/\/\\|^--\\|^> \\|^[#"%!;]//<CR>:nohlsearch<CR>"]
-    
-                         
+
+
     """ Folding {{{
         nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
         vnoremap <Space> zf

@@ -111,6 +111,7 @@ URxvt.color250: #d5c4a1
 *.color15:      #f9f8f5
 */
 
+/*
 !!Gruvbox Dark Theme starts Here!!!!
 
 ! hard contrast: *background: #1d2021
@@ -141,9 +142,9 @@ URxvt.color250: #d5c4a1
 ! LightGrey + White
 *color7:  #a89984
 *color15: #ebdbb2
+*/
 
 
-/*
 !Gruvbox Light Theme starts here!!!
 
 ! hard contrast: *background: #f9f5d7
@@ -174,7 +175,6 @@ URxvt.color250: #d5c4a1
 ! LightGrey + White
 *color7:  #7c6f64
 *color15: #3c3836
-*/
 
 
 URxvt.internalBorder:      0
