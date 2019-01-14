@@ -132,6 +132,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+t exec ./.scripts/touchpad_toggle.sh
 # lock the screen with system-lock script
 bindsym $mod+Shift+x exec system-lock
+# relaunch the desktop spooler script
+bindsym $mod+Shift+t exec "desktop-spooler& disown"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
