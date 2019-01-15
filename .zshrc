@@ -4,19 +4,19 @@
 #. ~/repos/dotfiles/z.sh
 # source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 source ~/repos/dotfiles/.abbr_pwd
-source /etc/profile.d/quartus.sh
-source /opt/Xilinx/Vivado/2018.2/settings64.sh
+#source /etc/profile.d/quartus.sh
+#source /opt/Xilinx/Vivado/2018.2/settings64.sh
 #source ~/.vim/plugged/gruvbox/gruvbox_256palette.sh
 
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 export ZSH=/home/kelevra/.oh-my-zsh
 export GOPATH=$HOME/repos/go
-export PATH=/home/kelevra/fuchsia/.jiri_root/bin:$PATH
+#export PATH=/home/kelevra/fuchsia/.jiri_root/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/kelevra/bin
-export PATH=$PATH:/opt/altera/18.0/nios2eds/sdk2/bin
-export QUARTUS_ROOTDIR=$PATH:/opt/altera/18.0/quartus
-export SOPC_KIT_NIOS2=$PATH:/opt/altera/18.0/nios2eds
+#export PATH=$PATH:/opt/altera/18.0/nios2eds/sdk2/bin
+#export QUARTUS_ROOTDIR=$PATH:/opt/altera/18.0/quartus
+#export SOPC_KIT_NIOS2=$PATH:/opt/altera/18.0/nios2eds
 #export MONGO_DATABASE_USER='piketest'
 #export MONGO_DATABASE_PASS='hurraypike1'
 #export MONGO_DATABASE_IP_ADDRESS='ds263791.mlab.com'
