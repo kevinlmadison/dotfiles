@@ -17,18 +17,7 @@ export PATH=$PATH:/home/kelevra/bin
 #export PATH=$PATH:/opt/altera/18.0/nios2eds/sdk2/bin
 #export QUARTUS_ROOTDIR=$PATH:/opt/altera/18.0/quartus
 #export SOPC_KIT_NIOS2=$PATH:/opt/altera/18.0/nios2eds
-#export MONGO_DATABASE_USER='piketest'
-#export MONGO_DATABASE_PASS='hurraypike1'
-#export MONGO_DATABASE_IP_ADDRESS='ds263791.mlab.com'
-#export MONGO_DATABASE_PORT='63791'
-#export MONGO_DATABASE_NAME='pike-test'
-export MONGOOSE_URI='mongodb://piketest:hurraypike1@ds263791.mlab.com:63791/pike-test'
-#export AUTH_TEST='TRUE'
-
-export RANCHER_ACCESS_KEY='2391E4641C22DE8E4058'
-export RANCHER_SECRET_KEY='BPrMQvRorBZXzEcMiLqkZGZe4YqEvRcq6ChsAbXB'
-export RANCHER_URL='http://rancher.krum.io:8080'
-
+source ~/envvars.sh
 #Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
