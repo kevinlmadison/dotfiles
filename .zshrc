@@ -14,6 +14,7 @@ export GOPATH=$HOME/repos/go
 #export PATH=/home/kelevra/fuchsia/.jiri_root/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/kelevra/bin
+export PATH=$PATH:/home/kelevra/.cargo/bin
 #export PATH=$PATH:/opt/altera/18.0/nios2eds/sdk2/bin
 #export QUARTUS_ROOTDIR=$PATH:/opt/altera/18.0/quartus
 #export SOPC_KIT_NIOS2=$PATH:/opt/altera/18.0/nios2eds

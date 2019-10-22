@@ -49,6 +49,7 @@ let g:ycm_min_num_identifier_candidate_chars = 4
 let g:ycm_enable_diagnostic_highlighting = 0
 " Nord theme stuff
 let g:nord_cursor_line_number_background = 1
+let NERDTreeHijackNetrw=1
 
 call plug#begin()
 
@@ -119,6 +120,8 @@ let g:auto_ctags_directory_list = ['.git']
         """ hi VertSplit ctermfg=Black ctermbg=Yellow gui=NONE
         """ highlight nonText ctermbg=NONE              " use terminal background
         au BufRead,BufNewFile *.txt set ft=sh       " opens .txt w/highlight
+
+        au FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
         """ Highlight characters past 80 {{{
             augroup vimrc_autocmds
                 autocmd BufEnter * highlight OverLength ctermbg=black guibg=#292929
@@ -244,8 +247,10 @@ let g:auto_ctags_directory_list = ['.git']
     " Toggle buffer selection/tag lists
     map <F3> <ESC>:TagbarToggle<CR>
     nmap <leader>T :enew<cr>
-    nmap <leader>l :bnext<cr>
-    nmap <leader>h :bprevious<cr>
+    nmap <leader>k :bnext<cr>
+    nmap <leader>j :bprevious<cr>
+    nmap <leader>l :tabnext<cr>
+    nmap <leader>h :tabprevious<cr>
 
     " Snipmate remapping
     "imap <tab> <C-r>=TriggerSnippet()<CR>
@@ -265,6 +270,8 @@ let g:auto_ctags_directory_list = ['.git']
     noremap <leader>y "+y
     noremap <leader>p "+p
     noremap <leader>n :noh<CR>
+    noremap <F12> <Esc>:syntax sync fromstart<CR>
+    inoremap <F12> <C-o>:syntax sync fromstart<CR>
 
     " Commenting with # or remove for multiple languages
     vnoremap <leader>; :s/^/#/<CR>:noh<CR>
