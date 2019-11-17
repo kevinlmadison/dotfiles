@@ -1,12 +1,13 @@
 set nocompatible              " be iMproved, required
+set inccommand=nosplit
 filetype off                  " required
 
 "set termguicolors
 let g:gruvbox_italic=1
 let g:gruvbox_termcolors=256
-set background=light
+set background=dark
 let g:gruvbox_contrast_light="hard"
-let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_contrast_dark="soft"
 
 " Golang syntax
 let g:go_highlight_types = 1
@@ -14,6 +15,15 @@ let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_arguments = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
 " Haskell Syntax
 let g:haskell_enable_quantification = 1
 let g:haskell_enable_recursivedo = 1
@@ -29,12 +39,13 @@ let g:airline_powerline_fonts = 1
 
 call plug#begin()
 
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
 Plug 'gmarik/vundle'
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'soramugi/auto-ctags.vim'
+"""Plug 'soramugi/auto-ctags.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
@@ -86,7 +97,7 @@ let g:auto_ctags_directory_list = ['.git']
             augroup vimrc_autocmds
                 autocmd BufEnter * highlight OverLength ctermbg=black guibg=#292929
                 autocmd BufEnter * match OverLength /\%160v.*/
-            augroup END
+ 
         """ }}}
     """ }}}
     """ Interface general {{{
@@ -177,6 +188,7 @@ let g:auto_ctags_directory_list = ['.git']
     set smarttab                                    " tab to 0,4,8 etc.
     set softtabstop=4                               " "tab" feels like <tab>
     set tabstop=4                                   " replace <TAB> w/4 spaces
+    set tags=./tags,tags;$HOME
     """inoremap { {}<Esc>i
     """inoremap [ []<Esc>i
     """inoremap ( ()<Esc>i
@@ -213,6 +225,7 @@ let g:auto_ctags_directory_list = ['.git']
 
     " Yank(copy) to system clipboard
     noremap <leader>y "+y
+    noremap <leader>p "+p
     noremap <leader>cs :source ~/.vimrc<CR>
 
     " Commenting with # or remove for multiple languages
@@ -238,24 +251,24 @@ let g:auto_ctags_directory_list = ['.git']
 
         let TList_Ctags_cmd = 'ctags'
     """ GVIM COLORS
-        hi SpecialKey guifg=Blue
-        hi MoreMsg guifg=Green
-        hi Visual guifg=NONE guibg=NONE
-        hi Folded ctermbg=4 guibg=Blue
-        hi FoldColumn ctermbg=7
-        hi DiffAdd guibg=Blue
-        hi DiffChange guibg=Magenta
-        hi DiffDelete guibg=Cyan
-        hi Normal guifg=Gray guibg=Black
-        hi Cursor guibg=White
-        hi lCursor guibg=White
-        hi Comment guifg=Cyan
-        hi Constant guifg=Magenta
-        hi Special guifg=Red
-        hi Identifier guifg=Cyan
-        hi Statement guifg=Yellow
-        hi PreProc guifg=Blue
-        hi Type guifg=Green
-        hi Underlined guifg=Blue
-        hi Todo guifg=Black
-        hi Directory ctermfg=Red
+    "    hi SpecialKey guifg=Blue
+    "    hi MoreMsg guifg=Green
+    "    hi Visual guifg=NONE guibg=NONE
+    "    hi Folded ctermbg=4 guibg=Blue
+    "    hi FoldColumn ctermbg=7
+    "    hi DiffAdd guibg=Blue
+    "    hi DiffChange guibg=Magenta
+    "    hi DiffDelete guibg=Cyan
+    "    hi Normal guifg=Gray guibg=Black
+    "    hi Cursor guibg=White
+    "    hi lCursor guibg=White
+    "    hi Comment guifg=Cyan
+    "    hi Constant guifg=Magenta
+    "    hi Special guifg=Red
+    "    hi Identifier guifg=Cyan
+    "    hi Statement guifg=Yellow
+    "    hi PreProc guifg=Blue
+    "    hi Type guifg=Green
+    "    hi Underlined guifg=Blue
+    "    hi Todo guifg=Black
+    "    hi Directory ctermfg=Red

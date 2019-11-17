@@ -1,9 +1,15 @@
-!URxvt*font: xft:Terminess Powerline:size=12
-URxvt*font:            xft:bitstream vera sans mono:pixelsize=13,xft:Inconsolata for Powerline:size=12
+/* Old Ubuntu Font, looks clean
+!URxvt*font:           xft:bitstream vera sans mono:pixelsize=11,xft:Inconsolata for Powerline:size=11
+*/
+!URxvt*font:            xft:GohuFont:pixelsize=11,xft:Inconsolata for Powerline:size=11
+!URxvt*font:            xft:Inconsolata for Powerline:size=11
+URxvt*font: xft:Iosevka Term SS01:pixelsize=14:hinting=true,xft:Inconsolata for Powerline:size=14
+
+*letterSpace:         0
 !*boldFont:            xft:Mono:pixelsize=11
 !*italicFont:          xft:Mono:pixelsize=11:italic
 !*boldItalicFont:      xft:Mono:pixelsize=11:bold:italic
-*letterSpace:         -1
+letterSpace:         -1
 
 
 Xft.autohint: 0
@@ -78,7 +84,6 @@ Xft.rgba: rgb
 *.color7:       #f8f8f2
 *.color15:      #f9f8f5
 */
-/*
 !!Gruvbox Dark Theme starts Here!!!!
 
 ! hard contrast: *background: #1d2021
@@ -109,10 +114,9 @@ Xft.rgba: rgb
 ! LightGrey + White
 *color7:  #a89984
 *color15: #ebdbb2
-*/
 
 !Gruvbox Light Theme starts here!!!
-
+/*
 ! hard contrast: *background: #f9f5d7
 *background: #fbf1c7
 ! soft contrast: *background: #f2e5bc
@@ -141,7 +145,7 @@ Xft.rgba: rgb
 ! LightGrey + White
 *color7:  #7c6f64
 *color15: #3c3836
-
+*/
 
 
 !Generalized Gruvbox Colors

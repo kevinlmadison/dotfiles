@@ -8,6 +8,10 @@ export ZSH=/home/kelevra/.oh-my-zsh
 export GOPATH=$HOME/repos/go
 export PATH=/home/kelevra/fuchsia/.jiri_root/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
+export PATH=/home/kelevra/.local/lib/python3.6/site-packages:$PATH
+export AVTEC_PIKE_DOMAIN=pike.research.avtecinc.com
+export DOCKER_USER_NAME=kevinlmadison
+source ~/.envvars.sh
 #Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -43,9 +47,17 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    z
+    rust
+    vi-mode
+)
 source $ZSH/oh-my-zsh.sh
 set -o vi
+if [ $commands[kubectl] ]; then
+    source <(kubectl completion zsh)
+fi
 #User configuration
 #export MANPATH="/usr/local/man:$MANPATH"
 #You may need to manually set your language environment
@@ -88,12 +100,23 @@ alias imaps='ssh -i cloud.key imaps@35.185.49.208'
 alias zed='cu -l /dev/ttyACM0 -s 115200'
 alias cores='nproc --all'
 alias drjava='java -jar drjava-beta-20160913-225446.jar'
-alias usclinux='ssh -Y madisonk@129.252.130.175 -p 222'
+alias usclinux='ssh -Y madisonk@129.252.130.177 -p 222'
 alias nord='xrdb .Xresources_nord'
 alias gruvbox='xrdb .Xresources_gruvbox'
 alias vim="nvim"
 alias ls="exa"
 alias pip="pip3"
 alias cleardocker="docker rm \$(docker ps -a -q -f status=exited)"
+alias av='cd ~/repos/cadet/avtec-app'
+alias k="kubectl"
+alias kcd='kubectl config set-context $(kubectl config current-context) --namespace '
+alias c='cd'
+alias v='nvim'
+alias colemak='setxkbmap -v us -variant colemak'
+alias qw='setxkbmap -v us -layout querty'
+alias ezsh='vim ~/.zshrc'
+alias szsh='source ~/.zshrc'
+alias sshaws='ssh -i /home/kelevra/repos/ossys/afml/k8s/keys/afml ec2-user@ec2-18-253-53-61.us-gov-east-1.compute.amazonaws.com'
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
