@@ -105,6 +105,7 @@ alias nord='xrdb .Xresources_nord'
 alias gruvbox='xrdb .Xresources_gruvbox'
 alias vim="nvim"
 alias ls="exa"
+alias grep="rg"
 alias pip="pip3"
 alias cleardocker="docker rm \$(docker ps -a -q -f status=exited)"
 alias av='cd ~/repos/cadet/avtec-app'
@@ -116,7 +117,7 @@ alias colemak='setxkbmap -v us -variant colemak'
 alias qw='setxkbmap -v us -layout querty'
 alias ezsh='vim ~/.zshrc'
 alias szsh='source ~/.zshrc'
-alias sshaws='ssh -i /home/kelevra/repos/ossys/afml/k8s/keys/afml ec2-user@ec2-18-253-53-61.us-gov-east-1.compute.amazonaws.com'
+alias sshaws='ssh -i /home/kelevra/repos/ossys/afml/k8s/keys/afml ec2-user@a.afml.ossys.com'
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

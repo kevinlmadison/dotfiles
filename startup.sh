@@ -13,7 +13,10 @@ sudo ln -s ~/repos/dotfiles/.Xresources_gruvbox ~/.Xresources_gruvbox
 sudo ln -s ~/repos/dotfiles/.Xresources_nord ~/.Xresources_nord
 sudo ln -s ~/repos/dotfiles/.fonts ~/.fonts
 sudo ln -s ~/repos/dotfiles/.scripts ~/.scripts
-sudo apt install i3 i3blocks
+sudo ln -s ~/repos/dotfiles/.fehbg ~/.fehbg
+chmod +x ~/repos/dotfiles/.fehbg
+chmod +x ~/repos/dotfiles/.scripts/touchpad_toggle
+sudo apt install i3 i3blocks feh
 rm -rf ~/.config/i3
 sudo ln -s ~/repos/dotfiles/i3 ~/.config/i3
 fc-cache -f -v
