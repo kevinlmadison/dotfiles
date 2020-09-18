@@ -8,10 +8,13 @@ export ZSH=/home/kelevra/.oh-my-zsh
 export GOPATH=$HOME/repos/go
 export PATH=/home/kelevra/fuchsia/.jiri_root/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$GOPATH/bin
 export PATH=/home/kelevra/.local/lib/python3.6/site-packages:$PATH
 export AVTEC_PIKE_DOMAIN=pike.research.avtecinc.com
 export DOCKER_USER_NAME=kevinlmadison
 source ~/.envvars.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 #Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -106,7 +109,7 @@ alias gruvbox='xrdb .Xresources_gruvbox'
 alias vim="nvim"
 alias ls="exa"
 alias grep="rg"
-alias pip="pip3"
+#alias pip="pip3"
 alias cleardocker="docker rm \$(docker ps -a -q -f status=exited)"
 alias av='cd ~/repos/cadet/avtec-app'
 alias k="kubectl"
@@ -117,7 +120,10 @@ alias colemak='setxkbmap -v us -variant colemak'
 alias qw='setxkbmap -v us -layout querty'
 alias ezsh='vim ~/.zshrc'
 alias szsh='source ~/.zshrc'
-alias sshaws='ssh -i /home/kelevra/repos/ossys/afml/k8s/keys/afml ec2-user@a.afml.ossys.com'
+alias sshaws='ssh -i /home/kelevra/repos/ossys/afml/k8s/keys/awsgov.dev centos@a.platform.ossys.com'
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /snap/vault/1822/bin/vault vault

@@ -1,4 +1,5 @@
 sudo apt install -y curl git vim zsh
+sudo apt install cmake
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install ripgrep
 cargo install exa
