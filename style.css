@@ -1,3 +1,10 @@
 .sidebar__logo img {
-  content: url(https://kubezt-public.s3.us-gov-east-1.amazonaws.com/kubezt_logo_white_400.png);
+  content: url("https://kubezt-public.s3.us-gov-east-1.amazonaws.com/kubezt_logo_white_400.png");
+}
+.login__logo img.logo-image {
+  display: none;
+}
+.login__logo {
+  background-size: 200px 50px;
+  background-image: url("https://kubezt-public.s3.us-gov-east-1.amazonaws.com/kubezt_logo_white_400.png");
 }
